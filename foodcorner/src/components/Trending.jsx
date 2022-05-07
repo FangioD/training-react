@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import "../index.css";
 
 function Trending() {
   const [trending, setTrending] = useState([]);
@@ -23,14 +26,29 @@ function Trending() {
   };
 
   return (
-    <div>
-      {trending.map((recipe) => {
-        return (
-          <div key={recipe.id}>
-            <p>{recipe.title}</p>
-          </div>
-        );
-      })}
+    <div className="wrapper">
+      <h3>Trending</h3>
+      <Splide
+        options={{
+          perPage: 4,
+          arrows: false,
+          pagination: false,
+          drag: "free",
+          gap: "5rem",
+        }}
+      >
+        {trending.map((recipe) => {
+          return (
+            <SplideSlide key={recipe.id}>
+              <div className="card">
+                <p>{recipe.title}</p>
+                <img src={recipe.image} alt={recipe.title} />
+              </div>
+              <div className="gradient" />
+            </SplideSlide>
+          );
+        })}
+      </Splide>
     </div>
   );
 }
