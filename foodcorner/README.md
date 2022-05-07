@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Exercise 1: Create an easy application that shows some random trending recipes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Step 0
 
-## Available Scripts
+In order to start with react, nodejs should be installed.
+Write the following code in your favorite terminal to create your first ever react application:
 
-In the project directory, you can run:
+```
+npx create-react-app appname
+```
 
-### `npm start`
+This will create your first ever react application.
+In order to view it in the browser, navigate to your newly created folder and execute:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Step 1
 
-### `npm test`
+Clean-up the src-folder.
+Delete `App.css`, `App.test.js`, `logo.svg`, `reportWebVitals.js`, `setupTests.js`.
+Replace the content inside the div of `App.js` to just a header for now.
+Remove unused code and imports inside `index.js`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Check if your app still works.
 
-### `npm run build`
+Create 2 folders, `components` and `pages`.
+Inside components, create a file `Trending.jsx` and add basic react code.
+Inside pages, create a file `Home.jsx` and `Pages.jsx` with also basic code.
+(The file `Pages.jsx` is actually unnecessary for this project in particular but I think it is good practice in order to keep your `App.js` as clean as possible.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`App.js` should use `Pages.jsx` which uses `Home.jsx` which uses `Trending.jsx`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In the end, your browser should show a screen with only the content inside `Trending.jsx` and the header in `App.js`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Step 2
 
-### `npm run eject`
+Make an account on https://spoonacular.com/food-api.
+Make a `.env` file in the root of your folder and add it to `.gitignore`.
+Add the following inside your `.env` file.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+REACT_APP_API_KEY=your-api-key
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After creating the `.env` file you must restart the server with `npm start`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Now you can fetch data inside `Trending.jsx` by using the fetch-api.
+Create a function that fetches 9 random recipes and prints their name on the screen.
+Make sure that the information is shown when **reloaded** and save it in a **state**.
+Also limit your API calls by setting and checking localStorage before fetching.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+In the end, your browser should show a screen with your 9 recipe titles and refreshing won't make it fetch data.
 
-## Learn More
+## Step 3
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Update the layout, therefore use https://splidejs.com/integration/react-splide/ and update `index.css` with the one in this repo.
+Go to Google fonts and search for `MontSerrat`(medium looks the best) and add the style-tag to the `index.html`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Below code shows the structure to mimmick the lay-out as in the example. **Note:** this is pseudo-code, `wrapper` and `card` do not exist but can be created using a `div` with the class given in the `index.css`.
 
-### Code Splitting
+```
+  <wrapper>
+      <h3>Trending</h3>
+      <Splide>
+            <!-- for each recipe>
+            <SplideSlide>
+              <card>
+                <p>title</p>
+                <img/>
+              </card>
+              <gradient/>
+            </SplideSlide>
+      </Splide>
+   </wrapper>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you managed to do the above structure, you will see that it is still not exactly what we want. Search the documentation of Splide for edit options.
