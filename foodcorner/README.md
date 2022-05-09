@@ -1,6 +1,6 @@
 # Exercise 1: Create an easy application that shows some random trending recipes
 
-## Step 0
+## Step 0: Create an application
 
 In order to start with react, nodejs should be installed.
 Write the following code in your favorite terminal to create your first ever react application:
@@ -16,7 +16,7 @@ In order to view it in the browser, navigate to your newly created folder and ex
 npm start
 ```
 
-## Step 1
+## Step 1: Learn some conventions
 
 Clean-up the src-folder.
 Delete `App.css`, `App.test.js`, `logo.svg`, `reportWebVitals.js`, `setupTests.js`.
@@ -34,7 +34,7 @@ Inside pages, create a file `Home.jsx` and `Pages.jsx` with also basic code.
 
 In the end, your browser should show a screen with only the content inside `Trending.jsx` and the header in `App.js`.
 
-## Step 2
+## Step 2: Fetching APIs and basic component creation
 
 Make an account on https://spoonacular.com/food-api.
 Make a `.env` file in the root of your folder and add it to `.gitignore`.
@@ -53,7 +53,7 @@ Also limit your API calls by setting and checking localStorage before fetching.
 
 In the end, your browser should show a screen with your 9 recipe titles and refreshing won't make it fetch data.
 
-## Step 3
+## Step 3: Work with CSS and 3rd party libraries
 
 Update the layout, therefore use https://splidejs.com/integration/react-splide/ and update `index.css` with the one in this repo.
 Go to Google fonts and search for `MontSerrat`(medium looks the best) and add the style-tag to the `index.html`.
