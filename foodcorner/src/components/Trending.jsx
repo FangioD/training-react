@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import "../index.css";
+import { Wrapper, Card, Gradient} from "../styles" ;
 
 function Trending() {
   const [trending, setTrending] = useState([]);
@@ -26,7 +26,7 @@ function Trending() {
   };
 
   return (
-    <div className="wrapper">
+    <Wrapper>
       <h3>Trending</h3>
       <Splide
         options={{
@@ -40,16 +40,16 @@ function Trending() {
         {trending.map((recipe) => {
           return (
             <SplideSlide key={recipe.id}>
-              <div className="card">
+              <Card>
                 <p>{recipe.title}</p>
                 <img src={recipe.image} alt={recipe.title} />
-              </div>
-              <div className="gradient" />
+              </Card>
+              <Gradient />
             </SplideSlide>
           );
         })}
       </Splide>
-    </div>
+    </Wrapper>
   );
 }
 

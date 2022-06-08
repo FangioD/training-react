@@ -1,0 +1,72 @@
+import styled, { createGlobalStyle } from 'styled-components';
+
+const Wrapper = styled.div`
+    margin: 2rem 0rem;
+`;
+
+const Card = styled.div`
+    margin-top: 2rem;
+    min-height: 25rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4rem;
+
+    img{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    p {
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        bottom: 0%;
+        transform: translate(-50%, 0%);
+        color: white;
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1rem;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+`;
+
+const Gradient = styled.div`
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+`;
+
+
+const GlobalStyle = createGlobalStyle`
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+  
+  
+    body {
+        margin: 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #121212;
+        color: white;
+    }
+  
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
+`
+
+export {Wrapper, Card, Gradient, GlobalStyle};
