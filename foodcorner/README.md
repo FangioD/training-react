@@ -58,7 +58,7 @@ In the end, your browser should show a screen with your 9 recipe titles and refr
 Update the layout, therefore use https://splidejs.com/integration/react-splide/ and update `index.css` with the one in this repo.
 Go to Google fonts and search for `MontSerrat`(medium looks the best) and add the style-tag to the `index.html`.
 
-Below code shows the structure to mimmick the lay-out as in the example. **Note:** Use styled components to create these tags. All tags are actually a div with some css.
+Below code shows the structure to mimmick the lay-out as in the example. **Note:** Use styled components to create these tags. All tags are actually a div with some css.    `npm install --save styled-components`
 
 ```
   <wrapper>
